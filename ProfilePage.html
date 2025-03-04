@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<style>
+  *{
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+    }
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+    a{
+        text-decoration: none;
+    }
+header{ 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2b2b2b;
+    height: auto;
+    color: white;
+}
+img{
+    width: 155px;
+}
+.navbar{
+    background-color: #2b2b2b;
+   
+}
+.hb-parent{
+display: none;
+justify-content: right;
+padding: 10px;
+}
+
+.menu-list{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #313030;
+    height: auto;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    width: 99.1%;
+    font-weight: 600;
+}
+.menu-list a{
+  color: white;
+}
+#nb:hover{
+    background-color: rgba(2, 8, 21, 0.674);
+    color: rgb(20, 255, 20);
+    font-weight: bold;
+    color: greenyellow;
+}
+#nb{
+    text-align: center;
+    width: auto;
+    padding: 6px;
+    border-radius: 6px;
+    width: 95%; color: white;
+}
+.hb {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.hb span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #f5f5f5;
+    transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+    .hb-parent{
+        display: flex;
+    }
+    .menu-list{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(39, 30, 96);
+    height: auto;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    width: 99.2%;
+    font-weight: 600;
+}
+
+    .menu-list.active {
+        display: flex;
+    }
+}
+
+
+
+     .footer {
+    background-color: #2b2b2b;
+    color: #f5f5f5;
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+#footersec a{
+text-decoration: none;
+color: #f4c10f;
+}
+.footer-section h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #f4c10f;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #f4c10f;
+}
+
+.footer-section .social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f4c10f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .cont1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.UserInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+}
+.live{
+    background-color: #050704;
+    color: #2b2b2b;
+}
+/*********************************************************/
+
+
+
+/********************************************************/
+.UserProfile{
+    display: flex;
+    flex-direction: column;
+}
+.cont1{
+    display: flex;
+    gap: 5px;
+    margin: 5px;
+    align-items: center;
+    background-color: #f3f3f3;
+    padding: 10px;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+    height: auto;
+    justify-content: space-between;
+}
+.cont2 img{
+    width: 80px;
+    border-radius: 5px;
+    margin-left: 4px;
+    margin-top: 4px;
+    
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.editbtn {
+    background: #eb3767;
+    color: #fafafa;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.editbtn:hover {
+    background: #fcca00;
+}
+.editbtn2 {
+    background: #2da933;
+    color: #fafafa;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.editbtn2:hover {
+    background: #fcca00;
+}
+.cont4{
+    display: flex;
+   gap: 10px;
+   margin-right: 5px;
+}
+.cont5{
+    display: flex;
+    gap: 30px;
+    /* margin: 5px; */
+    /* padding: 5px; */
+    border-radius: 5px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont3{
+    font-size: 14px;
+}
+
+.UserInfo{
+    display: flex;
+    
+    font-size: 15px;
+}
+
+.card1,.card2,.card3,.card4,.card5{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 2px;
+    /* background-color: #f2f1f1; */
+    background-image: radial-gradient( circle 1224px at 10.6% 8.8%,  rgb(246, 245, 245) 0%, rgb(252, 253, 253) 100.2% );
+    box-shadow: 1px 1px 3px rgb(190, 188, 188);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.col1,.col2{
+    width: 95%;
+}
+
+.UserInfo h3{
+    font-size: 20px;
+    /* padding-bottom: 5px; */
+    border-bottom:1px solid #eb3767;
+    color: #492017f4;
+    margin-bottom: 7px;
+}
+a{
+    color: #313030;
+    font-weight: 500;
+}
+.a1{
+    color: #3773e1;
+    font-weight: 500;
+}
+.logoutbut{
+    width: 50px;
+    margin: 5px;
+    padding: 1px;
+    border: 1px solid rgb(168, 166, 166);
+    background-color: #e9e8e8;
+}
+.profile-card {
+            width: 100%;
+            /* padding: 20px;
+            text-align: center;
+            background: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; */
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .login-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+        .LOC{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+            width: 100%;
+        }
+        .LOC p{
+            text-align: center;
+        }
+</style>
+<body>
+    <header>
+        <div><img src="https://github.com/user-attachments/assets/3d048b3f-4643-4a34-9042-37f1358b6cb3" alt="Reload Page"></div>
+    </header>
+<div class="navbar">
+    <div class="hb-parent">
+    <p class="menu-hb">
+        <div class="hb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </p>
+    </div>
+    <div class="menu-list">
+        <div id="nb"><a href="index.html">&#127968 Home</a></div>
+        <div id="nb"><a href="index.html">&#128218 Resources</a></div>
+        <div id="nb"><a href="ExamPage.html">&#128221 Exam</a></div>
+        <div id="nb"><a href="AboutUsPage.html">&#8505 About Us</a></div>
+        <div id="nb" class="live"><a href="ProfilePage.html">&#128187 Profile</a></div>
+        <div id="nb"><a href="LoginPage.html">&#128273 Log in</a></div>
+    </div>
+</div>
+<div class="profile-card" id="profileCard">
+    <div id="loggedInContent" class="hidden">
+
+<section class="UserProfile">
+<div class="cont1">
+    <div class="cont5">
+    <div class="cont2"><img src="https://github.com/user-attachments/assets/a5134510-53a0-4162-aa23-809f45fd5d43" alt=""></div>
+    <div class="cont3">
+        <h2>Sushant Bari</h2>
+            <p>@userId</p>
+            <p>📞 +9272088018 <br> <b style="color: blue;">✉</b>  Sushant.bari24@vit.edu</p>
+    </div></div>
+    <div class="cont4">
+        <button class="editbtn">Edit Profile</button>
+        <button class="editbtn2">Account Settings</button>
+    </div>
+</div>
+</section>
+ <section class="UserInfo">
+    <div class="col1">
+    <div class="card1">
+        <h3>Personal Information</h3>
+                <p><strong>📅 Date of Birth:</strong> 10 Oct 1995</p>
+                <p><strong>🚻 Gender:</strong> Male</p>
+                <p><strong>📍 Location:</strong> New York, USA</p>
+    </div>
+    <div class="card2">
+        <h3>Saved Content</h3>
+        <p>📌 <a href="#">Saved Quizzes</a></p>
+        <p>📖 <a href="#">Bookmarked Materials</a></p>
+        <p>📚 <a href="#">Recently Practiced Topics</a></p>
+    </div>
+    <div class="card3">
+        <h3>Learning Progress</h3>
+        <p><strong>✅ Quizzes Attempted:</strong> 25</p>
+        <p><strong>🎯 Accuracy Rate:</strong> 85%</p>
+        <p><strong>🔥 Streak:</strong> 10 Days</p>
+        <p><strong>🏆 Achievements:</strong> 🎖️ 🥇</p>
+        <p><strong>📊 Leaderboard Position:</strong> #12</p>
+    </div>
+    </div>
+    <div class="col2">
+    <div class="card4">
+        <h3>Subscription Details</h3>
+        <p><strong>🎟️ Status:</strong> Premium</p>
+        <p><strong>💳 Plan:</strong> Yearly (Expires Dec 2025)</p>
+        <!-- <button class="upgrade-btn">Upgrade Plan</button> -->
+    </div>
+    <div class="card5">
+        <h3>Account Settings</h3>
+        <p>🔑 <a href="#">Change Password</a></p>
+        <p>🔔 <a href="#">Notification Preferences</a></p>
+        <p>🌙 <label for="darkModeToggle">Dark Mode</label>
+            <input type="checkbox" id="darkModeToggle">
+        </p>
+        <button class="logoutbut" onclick="logoutUser()">Log out</button>
+
+    </div>
+</div>
+ </section>
+
+</div>
+<div id="loggedOutContent">
+    <div class="LOC">    <p>You are not registered. Kindly create an account to proceed.</p>
+    <button class="login-btn" onclick="redirectToLogin()">Go to Login</button>
+</div>
+
+</div>
+</div>
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <!-- <div class="footer-section about" id="footersec">
+            <h3>About Us</h3>
+            <p>We aim to provide valuable information and resources to support agriculture, promote sustainable practices, and empower farmers across the country.</p>
+            <a href="02_aboutus.html" class="read-more">Read More</a>
+        </div> -->
+        
+        <!-- Quick Links -->
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li>Privacy Policy</li>
+                <li>Terms & Conditions</li>
+            </ul>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@ThinkWise.com" class="a1">info@ThinkWise.com</a></p>
+            <p>Phone: +91 92720 00000</p>
+            <p>Address: Pune, India</p>
+        </div>
+        
+        <!-- Social Media -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 ThinkWise | All Rights Reserved | Designed by ❤️ Sushant Bari</p>
+    </div>
+</footer>
+    <script>
+   const hamburger = document.querySelector('.hb');
+        const menu = document.querySelector('.menu-list');
+        
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+   
+        // if (localStorage.getItem("isLoggedIn") !== "true") {
+        //     alert("You must log in first!");
+        //     // window.location.href = "login.html"; // Redirect to login page
+            
+        // }
+
+        // function logoutUser() {
+        //     // localStorage.removeItem("isLoggedIn"); // Clear login status
+        //     localStorage.setItem("isLoggedIn", "false");
+
+        //     alert("Logged Out!");
+        //     // window.location.href = "login.html"; // Redirect to login page
+        // }
+        // let isLoggedIn = true;  // Change to 'true' to simulate login
+        function logoutUser() {
+    localStorage.setItem("isLoggedIn", "false"); // Set login status to false
+    alert("Logged Out!");
+    window.location.href = "LoginPage.html"; // Redirect to login page
+}
+
+        let isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // Convert to boolean
+let username = localStorage.getItem("uname") || "Guest";
+let useremail = localStorage.getItem("uemail") || "Not Available";
+let userphone = localStorage.getItem("umobile") || "Not Available";
+
+function updateProfileUI() {
+    if (isLoggedIn) {
+        document.getElementById("loggedInContent").classList.remove("hidden");
+        document.getElementById("loggedOutContent").classList.add("hidden");
+
+        let profilename = document.querySelector(".cont3");
+        profilename.innerHTML = `
+            <h2>${username}</h2>
+            <p>@userId</p>
+            <p>📞 +${userphone} <br> <b style="color: blue;">✉</b> ${useremail}</p>
+        `;
+    } else {
+        document.getElementById("loggedInContent").classList.add("hidden");
+        document.getElementById("loggedOutContent").classList.remove("hidden");
+    }
+}
+
+function redirectToLogin() {
+    window.location.href = "LoginPage.html"; // Redirect to actual login page
+}
+
+updateProfileUI();
+
+ </script>
+</body>
+</html>

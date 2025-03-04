@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exams</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<style>
+     *{
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+    }
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+    a{
+        text-decoration: none;
+    }
+header{ 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2b2b2b;
+    height: auto;
+    color: white;
+}
+img{
+    width: 155px;
+}
+.navbar{
+    background-color: #2b2b2b;
+   
+}
+.hb-parent{
+display: none;
+justify-content: right;
+padding: 10px;
+}
+
+.menu-list{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #313030;
+    height: auto;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    width: 99.1%;
+    font-weight: 600;
+}
+.menu-list a{
+  color: white;
+}
+#nb:hover{
+    background-color: rgba(2, 8, 21, 0.674);
+    color: rgb(20, 255, 20);
+    font-weight: bold;
+    color: greenyellow;
+}
+#nb{
+    text-align: center;
+    width: auto;
+    padding: 6px;
+    border-radius: 6px;
+    width: 95%; color: white;
+}
+.hb {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.hb span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #f5f5f5;
+    transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+    .hb-parent{
+        display: flex;
+    }
+    .menu-list{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(39, 30, 96);
+    height: auto;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    width: 99.2%;
+    font-weight: 600;
+}
+
+    .menu-list.active {
+        display: flex;
+    }
+}
+
+
+
+     .footer {
+    background-color: #2b2b2b;
+    color: #f5f5f5;
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+#footersec a{
+text-decoration: none;
+color: #f4c10f;
+}
+.footer-section h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #f4c10f;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #f4c10f;
+}
+
+.footer-section .social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f4c10f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .cont1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.UserInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+}
+.live{
+    background-color: #050704;
+    color: #2b2b2b;
+}
+/*****************************************/
+
+
+/*****************************************/
+
+
+/*****************************************/
+
+
+/*****************************************/
+.Exam{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 20px;
+}
+@media (max-width: 768px) {
+    .Exam{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    padding: 20px;
+
+}
+    }
+.ExamCard {
+            background: white;
+            width: 85%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            border-left: 6px solid #1fc03a;
+            transition: all 0.3s ease-in-out;
+        }
+        .ExamCard:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .ExamCard h2 {
+            color: #ff0000;
+            margin-bottom: 15px;
+            font-size: 24px;
+            
+        }
+        .ExamCard ul {
+            text-align: left;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        .ExamCard ul li {
+            color: #444;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .ExamCard ul li:last-child {
+            border-bottom: none;
+        }
+        .ExamCard .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #3ecb36;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .ExamExamCard .btn:hover {
+            background: #0056b3;
+        }
+        h2 img {
+            width: 65px;
+            min-height: 60px;
+        }
+        .ExamCardTitle{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+        }
+        #Examcard1{
+            border-left: 6px solid #1fc03a;
+        }
+        #Examcard2{
+            border-left: 6px solid #321fc0;
+        }
+        #Examcard3{
+            border-left: 6px solid #160f44;
+        }
+        #Examcard4{
+            border-left: 6px solid #778376;
+        }
+        #Examcard5{
+            border-left: 6px solid #dbcc29;
+        }
+        #Examcard6{
+            border-left: 6px solid #197a81;
+        }
+        #Examcard7{
+            border-left: 6px solid #a83434;
+        }
+
+      
+        #Exbtn1{
+            background: #1fc03a;
+        }
+        #Exbtn2{
+            background: #321fc0;
+        }
+        #Exbtn3{
+            background: #160f44;
+        }
+        #Exbtn4{
+            background: #778376;
+        }
+        #Exbtn5{
+            background: #dbcc29;
+        }
+        #Exbtn6{
+            background: #197a81;
+        }
+        #Exbtn7{
+            background: #a83434;
+        }
+</style>
+<body>
+    <header>
+        <div><img src="https://github.com/user-attachments/assets/3d048b3f-4643-4a34-9042-37f1358b6cb3" alt="Reload Page"></div>
+    </header>
+<div class="navbar">
+    <div class="hb-parent">
+    <p class="menu-hb">
+        <div class="hb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </p>
+    </div>
+    <div class="menu-list">
+        <div id="nb"><a href="index.html">&#127968 Home</a></div>
+        <div id="nb"><a href="index.html">&#128218 Resources</a></div>
+        <div id="nb" class="live"><a href="ExamPage.html">&#128221 Exam</a></div>
+        <div id="nb"><a href="AboutUsPage.html">&#8505 About Us</a></div>
+        <div id="nb"><a href="ProfilePage.html">&#128187 Profile</a></div>
+        <div id="nb"><a href="LoginPage.html">&#128273 Log in</a></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<section class="Exam">
+    <div class="ExamCard" id="Examcard1"><div class="ExamCardTitle">
+        <h2> <img src="https://github.com/user-attachments/assets/45d998dd-ee2a-4b4d-8d3c-0cc860ab632d" alt=""><div>GATE Exam 2025</div></div>
+        <ul>
+            <li><strong>Eligibility:</strong> B.E./B.Tech/M.Sc students</li>
+            <li><strong>Exam Mode:</strong> Computer-Based Test (CBT)</li>
+            <li><strong>Subjects:</strong> 29 Engineering & Science subjects</li>
+            <li><strong>Duration:</strong> 3 Hours</li>
+            <li><strong>Application Mode:</strong> Online</li>
+            <li><strong>Application Fee:</strong> Varies for categories</li>
+            <li><strong>Score Validity:</strong> 3 Years</li>
+            <li><strong>Conducting Body:</strong> IIT/IISc on rotation</li>
+            <li><strong>Uses:</strong> M.Tech admissions, PSU recruitment</li>
+            <li><strong>Official Website:</strong> <a href="https://gate.iitk.ac.in/" target="_blank">gate.iitk.ac.in</a></li>
+        </ul>
+        <a href="https://gate.iitk.ac.in/" class="btn" target="_blank" id="Exbtn1">Learn More</a>
+    </div>
+    <div class="ExamCard" id="Examcard2">
+        <div class="ExamCardTitle">
+            <h2> <img src="https://github.com/user-attachments/assets/66dc37fc-7211-4060-b373-cb8fa07e22e1" alt="">
+                <div>CAT Exam 2025</div>
+            </h2>
+        </div>
+        <ul>
+            <li><strong>Eligibility:</strong> Bachelor's degree with 50% (45% for reserved categories)</li>
+            <li><strong>Exam Mode:</strong> Computer-Based Test (CBT)</li>
+            <li><strong>Subjects:</strong> VARC, DILR, QA</li>
+            <li><strong>Duration:</strong> 2 Hours</li>
+            <li><strong>Application Mode:</strong> Online</li>
+            <li><strong>Application Fee:</strong> ₹2400 (₹1200 for SC/ST/PwD)</li>
+            <li><strong>Score Validity:</strong> 1 Year</li>
+            <li><strong>Conducting Body:</strong> IIMs</li>
+            <li><strong>Uses:</strong> MBA admissions in IIMs & top B-schools</li>
+            <li><strong>Official Website:</strong> <a href="https://iimcat.ac.in/" target="_blank">iimcat.ac.in</a></li>
+        </ul>
+        <a href="https://iimcat.ac.in/" class="btn" target="_blank" id="Exbtn2">Learn More</a>
+    </div>
+    <div class="ExamCard" id="Examcard3">
+        <div class="ExamCardTitle">
+            <h2> <img src="https://github.com/user-attachments/assets/e0f8734b-9c42-4531-9cb0-304459979ba4" alt="">
+                <div>GMAT Exam 2025</div>
+            </h2>
+        </div>
+        <ul>
+            <li><strong>Eligibility:</strong> No specific eligibility criteria</li>
+            <li><strong>Exam Mode:</strong> Computer-Based Test (CBT)</li>
+            <li><strong>Subjects:</strong> Quant, Verbal, IR, AWA</li>
+            <li><strong>Duration:</strong> 3 Hours 7 Minutes</li>
+            <li><strong>Application Mode:</strong> Online</li>
+            <li><strong>Application Fee:</strong> $275</li>
+            <li><strong>Score Validity:</strong> 5 Years</li>
+            <li><strong>Conducting Body:</strong> GMAC</li>
+            <li><strong>Uses:</strong> MBA & Business School admissions</li>
+            <li><strong>Official Website:</strong> <a href="https://www.mba.com/" target="_blank">mba.com</a></li>
+        </ul>
+        <a href="https://www.mba.com/" class="btn" target="_blank" id="Exbtn3">Learn More</a>
+    </div>
+
+    <div class="ExamCard" id="Examcard4">
+        <div class="ExamCardTitle">
+            <h2> <img src="https://github.com/user-attachments/assets/7bc5c77d-810e-4b60-b5a8-b81a44690778" alt="">
+                <div>CLAT Exam 2025</div>
+            </h2>
+        </div>
+        <ul>
+            <li><strong>Eligibility:</strong> 10+2 (45% for General, 40% for SC/ST)</li>
+            <li><strong>Exam Mode:</strong> Offline (Pen & Paper)</li>
+            <li><strong>Subjects:</strong> English, GK, Legal Reasoning, Logical Reasoning, Quant</li>
+            <li><strong>Duration:</strong> 2 Hours</li>
+            <li><strong>Application Mode:</strong> Online</li>
+            <li><strong>Application Fee:</strong> ₹4000 (₹3500 for SC/ST)</li>
+            <li><strong>Score Validity:</strong> 1 Year</li>
+            <li><strong>Conducting Body:</strong> Consortium of NLUs</li>
+            <li><strong>Uses:</strong> Law admissions in NLUs & private law colleges</li>
+            <li><strong>Official Website:</strong> <a href="https://consortiumofnlus.ac.in/" target="_blank">consortiumofnlus.ac.in</a></li>
+        </ul>
+        <a href="https://consortiumofnlus.ac.in/" class="btn" target="_blank" id="Exbtn4">Learn More</a>
+    </div>
+    <div class="ExamCard" id="Examcard5">
+        <div class="ExamCardTitle">
+            <h2> <img src="https://github.com/user-attachments/assets/49fffde1-6101-42e3-a6ed-9caf3a460ef5" alt="">
+                <div>CDS Exam 2025</div>
+            </h2>
+        </div>
+        <ul>
+            <li><strong>Eligibility:</strong> Graduation (B.A./B.Sc./B.Tech, etc.)</li>
+            <li><strong>Exam Mode:</strong> Offline (Pen & Paper)</li>
+            <li><strong>Subjects:</strong> English, General Knowledge, Mathematics</li>
+            <li><strong>Duration:</strong> 2 Hours per paper</li>
+            <li><strong>Application Mode:</strong> Online</li>
+            <li><strong>Application Fee:</strong> ₹200</li>
+            <li><strong>Score Validity:</strong> 1 Year</li>
+            <li><strong>Conducting Body:</strong> UPSC</li>
+            <li><strong>Uses:</strong> Indian Army, Navy, Air Force recruitment</li>
+            <li><strong>Official Website:</strong> <a href="https://www.upsc.gov.in/" target="_blank">upsc.gov.in</a></li>
+        </ul>
+        <a href="https://www.upsc.gov.in/" class="btn" target="_blank" id="Exbtn5">Learn More</a>
+    </div>
+    <div class="ExamCard" id="Examcard6">
+        <div class="ExamCardTitle">
+            <h2> <img src="https://github.com/user-attachments/assets/626fcf1f-f5f7-4236-b3c4-cebf6309d970" alt="">
+                <div>CRPF Exam 2025</div>
+            </h2>
+        </div>
+        <ul>
+            <li><strong>Eligibility:</strong> 10th/12th/Graduation (varies by post)</li>
+            <li><strong>Exam Mode:</strong> Computer-Based Test (CBT) & Physical Test</li>
+            <li><strong>Subjects:</strong> General Intelligence, GK, Mathematics, Reasoning</li>
+            <li><strong>Duration:</strong> 90-120 Minutes</li>
+            <li><strong>Application Mode:</strong> Online</li>
+            <li><strong>Application Fee:</strong> ₹200 (₹100 for SC/ST/Ex-Servicemen)</li>
+            <li><strong>Score Validity:</strong> 1 Year</li>
+            <li><strong>Conducting Body:</strong> CRPF</li>
+            <li><strong>Uses:</strong> Recruitment in Central Reserve Police Force</li>
+            <li><strong>Official Website:</strong> <a href="https://crpf.gov.in/" target="_blank">crpf.gov.in</a></li>
+        </ul>
+        <a href="https://crpf.gov.in/" class="btn" target="_blank" id="Exbtn6">Learn More</a>
+    </div>
+    <div class="ExamCard" id="Examcard7">
+        <div class="ExamCardTitle">
+            <h2> <img src="https://github.com/user-attachments/assets/ea5e7262-3d43-465c-ab24-28cbcc872186" alt="">
+                <div>RRB Exam 2025</div>
+            </h2>
+        </div>
+        <ul>
+            <li><strong>Eligibility:</strong> 10th/12th/Graduation (varies by post)</li>
+            <li><strong>Exam Mode:</strong> Computer-Based Test (CBT)</li>
+            <li><strong>Subjects:</strong> Mathematics, General Intelligence, Reasoning, GK</li>
+            <li><strong>Duration:</strong> 90-120 Minutes</li>
+            <li><strong>Application Mode:</strong> Online</li>
+            <li><strong>Application Fee:</strong> ₹500 (₹250 for SC/ST/Ex-Servicemen)</li>
+            <li><strong>Score Validity:</strong> 1 Year</li>
+            <li><strong>Conducting Body:</strong> Railway Recruitment Board (RRB)</li>
+            <li><strong>Uses:</strong> Recruitment in Indian Railways</li>
+            <li><strong>Official Website:</strong> <a href="https://www.rrbcdg.gov.in/" target="_blank">rrbcdg.gov.in</a></li>
+        </ul>
+        <a href="https://www.rrbcdg.gov.in/" class="btn" target="_blank" id="Exbtn7">Learn More</a>
+    </div>
+    
+</section>
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <!-- <div class="footer-section about" id="footersec">
+                <h3>About Us</h3>
+                <p>We aim to provide valuable information and resources to support agriculture, promote sustainable practices, and empower farmers across the country.</p>
+                <a href="02_aboutus.html" class="read-more">Read More</a>
+            </div> -->
+            
+            <!-- Quick Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@ThinkWise.com">info@ThinkWise.com</a></p>
+                <p>Phone: +91 92720 00000</p>
+                <p>Address: Pune, India</p>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 ThinkWise | All Rights Reserved | Designed by ❤️ Sushant Bari</p>
+        </div>
+    </footer>
+        <script>
+       const hamburger = document.querySelector('.hb');
+            const menu = document.querySelector('.menu-list');
+            
+            hamburger.addEventListener('click', () => {
+              menu.classList.toggle('active');
+            });
+       
+    
+     </script>
+</body>
+</html>
